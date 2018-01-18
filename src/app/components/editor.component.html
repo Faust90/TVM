@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-12 ">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" name="nome" [(ngModel)]='currentMonster.name'>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 ">
+                <label for="liv">Livello</label>
+                <input type="number" [(ngModel)]='currentMonster.level' name="liv" min="1" step="1" max="10" class="form-control" name="rob">
+
+            </div>
+
+            <div class="col-sm-5 ">
+                <label for="role">Ruolo</label>
+                <select name="role" class="form-control" id="roleSelectBox" [(ngModel)]='currentMonster.role'>
+                    <option value="fighter">Combattente</option>
+                    <option value="spellcaster">Incantatore</option>
+                    <option value="expert">Esperto</option>
+                </select>
+
+            </div>
+
+            <div class="col-sm-4 ">
+                <label for="path">Percorso</label>
+                <select name="path" class="form-control" id="pathSelectBox" [(ngModel)]='currentMonster.path'>
+                    <option value="foul">Immondo</option>
+                    <option value="native">Nativo</option>
+                    <option value="undead">Nonmorto</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-6 ">
+            <label for="pf">Punti Ferita</label>
+            <p>{{currentMonster.getPF()}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 ">
+            <label for="rob">Robustezza</label>
+            <input type="number" [(ngModel)]='currentMonster.rob' name="rob" min="-5" step="1" max="10" class="form-control" name="rob">
+            <label for="agi">Agilità</label>
+            <input type="number" [(ngModel)]='currentMonster.agi' name="agi" min="-5" step="1" max="10" class="form-control" name="agi">
+            <label for="men">Mente</label>
+            <input type="number" [(ngModel)]='currentMonster.men' name="men" min="-5" step="1" max="10" class="form-control" name="men">
+            <label for="vol">Volontà</label>
+            <input type="number" [(ngModel)]='currentMonster.vol' name="vol" min="-5" step="1" max="10" class="form-control" name="vol">
+        </div>
+        <div class="col-sm-6 ">
+            <label for="rob">Tempra</label>
+            <p>{{currentMonster.getTem()}}</p>
+            <label for="agi">Riflessi</label>
+            <p>{{currentMonster.getRif()}}</p>
+            <label for="men">Acume</label>
+            <p>{{currentMonster.getAcu()}}</p>
+            <label for="vol">Spirito</label>
+            <p>{{currentMonster.getSpi()}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-success" type="sumbit" (click)="saveMon()">Save</button>
+        </div>
+    </div>
+</div>
