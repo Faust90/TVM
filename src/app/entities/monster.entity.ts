@@ -5,11 +5,16 @@ export class MonsterEntity {
     id: number;
 
     level = 1;
+    experience = 0;
+
+    name: string;
 
     rob = 0;
     agi = 0;
     men = 0;
     vol = 0;
+
+    armor = 8;
 
     role: string;
     path: string;

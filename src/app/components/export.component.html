@@ -1,0 +1,43 @@
+<pre *ngFor="let monster of monsterList">
+      
+## {{monster.name}}			  
+#### Liv. {{monster.level}} ({{monster.experience}}px)
+  
+------------------------------------------------------------
+
+{{monster.path}} {{monster.role}} 
+
+**PF:** {{monster.getPF()}}		
+
+
+**ROB:** {{monster.rob}} **AGI:** {{monster.agi}} **MEN:** {{monster.men}} **VOL:** {{monster.vol}}		
+
+**ARM:** {{monster.armor}}  **TEM:** {{monster.getTem()}} **RIF:** {{monster.getRif()}} **ACU:** {{monster.getAcu()}} **SPI:** {{monster.getSpi()}}	
+	
+{{#QUANTITA}}2{{\QUANTITA}} {{ATTACCO_MISCHIA}} ({{ATK}}): {{GRADO_DANNO}} + {{DANNO_MISCHIA}}	
+{{#QUANTITA}}2{{\QUANTITA}} {{ATTACCO_DISTANZA}} ({{ATK}}): {{GRADO_DANNO}} + {{DANNO_DISTANZA}}	
+
+Maestria Magica: {{MM_MOSTRO}}	
+
+#### Disgrazie Conosciute ( Potenza Magica: {{PM_MOSTRO}}, {{ATK_MAGICO}} ):
+
+* **Disgrazie liv. {{LIVELLO}}:**
+
+	* *{{NOME_INCANTESIMO}}* 
+
+	
+Capacità speciali:
+
+* *{{NOME}}*: {{EFFETTO}}
+
+Competenze:
+
+* *{{NOME}}*
+
+------------------------------------------------------------
+
+{{TESTO_MOSTRO}}	
+
+------------------------------------------------------------
+
+</pre>

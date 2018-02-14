@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MonsterEntity } from '../entities/monster.entity';
 import { EditorService } from '../services/editor.service';
+import { TraitsEntity } from '../entities/traits.entity';
 
 @Component({
     selector: 'app-editor',
@@ -23,4 +24,12 @@ export class EditorComponent implements OnInit {
         console.log(this.currentMonster);
     }
 
+    addTrait(nameValue: string, descValue: string) {
+        const newTrait = new TraitsEntity(nameValue, descValue);
+        this.currentMonster.traits.push(newTrait);
+    }
+
+    resetMonster(){
+        this.currentMonster = new MonsterEntity();
+    }
 }
