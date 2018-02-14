@@ -19,6 +19,7 @@ export class MonsterEntity {
     role: string;
     path: string;
     proficiencies: string[] = [];
+    disgraces = new Map<string, string[]>();
     traits: TraitsEntity[] = [];
 
     getPF() {
@@ -39,5 +40,13 @@ export class MonsterEntity {
 
     getSpi() {
         return 8 + this.men;
+    }
+
+    getRanks() {
+        return Array.from(this.disgraces.keys());
+    }
+
+    getDisgracesPerRank(rank) {
+        return this.disgraces.get(rank);
     }
 }

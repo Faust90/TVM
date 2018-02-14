@@ -17,22 +17,31 @@
 {{#QUANTITA}}2{{\QUANTITA}} {{ATTACCO_MISCHIA}} ({{ATK}}): {{GRADO_DANNO}} + {{DANNO_MISCHIA}}	
 {{#QUANTITA}}2{{\QUANTITA}} {{ATTACCO_DISTANZA}} ({{ATK}}): {{GRADO_DANNO}} + {{DANNO_DISTANZA}}	
 
-Maestria Magica: {{MM_MOSTRO}}	
+Maestria Magica: {{monster.men}}	
 
-#### Disgrazie Conosciute ( Potenza Magica: {{PM_MOSTRO}}, {{ATK_MAGICO}} ):
+#### Disgrazie Conosciute ( Potenza Magica: {{monster.vol}}, {{ATK_MAGICO}} ):
 
-* **Disgrazie liv. {{LIVELLO}}:**
-
-	* *{{NOME_INCANTESIMO}}* 
+<pre *ngFor="let disgraceRank of monster.getRanks()">
+* **Disgrazie Rango {{disgraceRank}}:**
+<pre *ngFor="let disgrace of monster.getDisgracesPerRank(disgraceRank)">
+* *{{disgrace}}* 
+</pre>
+</pre>
 
 	
-Capacità speciali:
+Tratti:
 
-* *{{NOME}}*: {{EFFETTO}}
+<pre *ngFor="let trait of monster.traits">
+* *{{trait.name}}*: {{trait.description}}
+</pre>
+
 
 Competenze:
 
-* *{{NOME}}*
+<pre *ngFor="let proficiency of monster.proficiencies">
+* *{{trait.name}}*: {{trait.description}}
+</pre>
+        
 
 ------------------------------------------------------------
 
