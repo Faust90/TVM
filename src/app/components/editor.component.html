@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-sm-3 ">
                 <label for="liv">Livello</label>
-                <input type="number" [(ngModel)]='currentMonster.level' name="liv" min="1" step="1" max="10" class="form-control" >
+                <input type="number" [(ngModel)]='currentMonster.level' name="liv" min="1" step="1" max="10" class="form-control">
                 <label for="exp">Esperienza</label>
                 <input type="number" [(ngModel)]='currentMonster.experience' name="exp" class="form-control">
             </div>
@@ -33,7 +33,7 @@
                 </select>
 
                 <label for="armor">Armatura</label>
-                <input type="number" [(ngModel)]='currentMonster.armor' name="armor" min="8"  max="20" class="form-control" >
+                <input type="number" [(ngModel)]='currentMonster.armor' name="armor" min="8" max="20" class="form-control">
             </div>
 
             <div class="col-sm-4 ">
@@ -80,14 +80,17 @@
     </div>
 
     <!-- TRATTI -->
-    
+
     <div class="row">
         <div class="col-sm-6 ">
-            <label for="trait-name">Nome</label>
-            <input type="text" name="trait-name" class="form-control" #traitName>
-            <label for="trait-desc">Descrizione</label>
-            <textarea name="trait-desc" class="form-control" #traitDesc></textarea>
-            <button class="btn btn-success" type="sumbit" (click)="addTrait(traitName.value,traitDesc.value)">Add Trait</button>
+            <label for="trait-select">Nome</label>
+            <select name="trait-select" class="form-control" #traitSelectBox><option>
+                </option>
+                <option *ngFor=" let trait of editorService.getTraits()" [value]="trait.name ">
+                    {{ trait.name }}
+                </option>
+            </select>
+            <button class="btn btn-success" type="sumbit" (click)="addTrait(traitSelectBox.value)">Add Trait</button>
         </div>
         <div class="col-sm-6 ">
             <ol class="list-group">
@@ -97,4 +100,6 @@
             </ol>
         </div>
     </div>
+
+    <!-- DISGRAZIE -->
 </div>

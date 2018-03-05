@@ -24,12 +24,13 @@ export class EditorComponent implements OnInit {
         console.log(this.currentMonster);
     }
 
-    addTrait(nameValue: string, descValue: string) {
-        const newTrait = new TraitsEntity(nameValue, descValue);
-        this.currentMonster.traits.push(newTrait);
+    addTrait(traitname: string) {
+        const newTrait = this.editorService.getTraitByName(traitname);
+        this.currentMonster.traits.push(new TraitsEntity(newTrait.name, newTrait.description));
+
     }
 
-    resetMonster(){
+    resetMonster() {
         this.currentMonster = new MonsterEntity();
     }
 }
