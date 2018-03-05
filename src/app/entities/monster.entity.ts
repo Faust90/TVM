@@ -39,7 +39,7 @@ export class MonsterEntity {
     }
 
     getSpi() {
-        return 8 + this.men;
+        return 8 + this.vol;
     }
 
     getRanks() {
